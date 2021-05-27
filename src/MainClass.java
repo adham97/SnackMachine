@@ -37,12 +37,16 @@ public class MainClass {
 		
 			if(rowIndex < 0)
 				rowIndex = 0;	
-			if(snackMachine.getSnakes(rowIndex, columnIndex).getCode() == _codeNumber) {
+			if(rowIndex > 4 || columnIndex > 4) {
+				System.out.println("This code number does not exist");
+				rowIndex = 4; 
+				columnIndex = 4;
+			} else if(snackMachine.getSnakes(rowIndex, columnIndex).getCode() == _codeNumber) {
 				snackMachine.getSnakes(rowIndex, columnIndex).isAvailable();
 			} else {
 				System.out.println("This code number does not exist");
-				
 			}
+			
 		} while(snackMachine.getSnakes(rowIndex, columnIndex).getCode() != _codeNumber);
 		
 		// case 4 : Customer inserts the money.
