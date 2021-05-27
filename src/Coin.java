@@ -1,7 +1,11 @@
 public class Coin {
-	double value;
+	private double value;
 	
-	Coin(double value) {
+	public Coin() {
+		this.value = 0.0;
+	}
+	
+	public Coin(double value) {
 		if(checkCoin(value)) {
 			this.value = value;
 		} else {
@@ -15,12 +19,7 @@ public class Coin {
 	}
 	
 	public void setCoin(double value) {
-		if(checkCoin(value)) {
-			this.value = value;
-		} else {
-			System.out.println("Sorry, our dear customer.");
-			System.out.println("The Snack Machine only accepts 10c, 20c, 50c, 1$");
-		}
+		this.value = value;
 	}
 	
 	public double getCoin() {

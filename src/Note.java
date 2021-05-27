@@ -1,7 +1,11 @@
 public class Note {
-	int value;
+	private int value;
 	
-	Note(int value) {
+	public Note() {
+		this.value = 0;
+	}
+	
+	public Note(int value) {
 		if(checkNote(value)) {
 			this.value = value;
 		} else {
